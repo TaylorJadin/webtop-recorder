@@ -1,29 +1,41 @@
 services:
+
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
+    depends_on:
+      - webtop
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    env_file:
+      - .env
+    environment:
+      - ACME_AGREE=true
+      - EMAIL=${EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
   webtop:
     build: .
     container_name: webtop
     restart: unless-stopped
     shm_size: "2gb"
-
     ports:
-      - "3000:3000"
-      - "3001:3001"
-
+      - "${WEBTOP_LOCAL_PORT:-3000}:3000"
+      - "${WEBTOP_LOCAL_HTTPS_PORT:-3001}:3001"
     environment:
-      - PUID=1000
-      - PGID=1000
-      # - TZ=America/New_York
-      - TITLE=Webtop Recorder
-      - WIDTH=1920
-      - HEIGHT=1080
-      - REFRESH=60
-
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
+      - TITLE=${TITLE:-Webtop Recorder}
     volumes:
-      - ./config:/config
-      # - /etc/localtime:/etc/localtime:ro
-
-    # devices:
-      # - /dev/dri:/dev/dri
-
+      - ./home:/config
     security_opt:
       - label=disable
+
+volumes:
+  caddy_data:
+  caddy_config:
