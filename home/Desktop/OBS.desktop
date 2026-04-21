@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=OBS
+Comment=Free and Open Source Streaming/Recording Software
+Exec=obs
+Icon=com.obsproject.Studio
+Path=
+Terminal=false
+StartupNotify=true
