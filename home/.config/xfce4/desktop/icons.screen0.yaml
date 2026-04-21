@@ -4,37 +4,6 @@
 configs:
 - level: 0
   monitors:
-  - id: "8620553fc723e46fe2a77bdeeb144a20b42fd1f5"
-    display_name: "selkies-primary"
-    geometry:
-      x: 0
-      y: 0
-      width: 1920
-      height: 1080
-  icons:
-    "/config/Desktop/Chromium Web Browser.desktop":
-      row: 3
-      col: 0
-    "/":
-      row: 1
-      col: 0
-    "trash:///":
-      row: 1
-      col: 0
-    "/config/Desktop/Firefox.desktop":
-      row: 2
-      col: 0
-    "/config/Desktop/black.jpg":
-      row: 5
-      col: 0
-    "/config/Desktop/OBS Studio.desktop":
-      row: 4
-      col: 0
-    "/config":
-      row: 0
-      col: 0
-- level: 0
-  monitors:
   - id: "5709fc3168ec609e37cbc3c8b36fd12a99ff5620"
     display_name: "screen"
     geometry:
@@ -43,3 +12,40 @@ configs:
       width: 1024
       height: 768
   icons: {}
+- level: 0
+  monitors:
+  - id: "8620553fc723e46fe2a77bdeeb144a20b42fd1f5"
+    display_name: "selkies-primary"
+    geometry:
+      x: 0
+      y: 0
+      width: 1920
+      height: 1080
+  icons:
+    "trash:///":
+      row: 2
+      col: 0
+    "/config/Desktop/Firefox.desktop":
+      row: 3
+      col: 0
+    "/config/Desktop/Chromium.desktop":
+      row: 4
+      col: 0
+    "/config/Desktop/OBS Studio.desktop":
+      row: 4
+      col: 0
+    "/config/Desktop/OBS.desktop":
+      row: 5
+      col: 0
+    "/config/Desktop/Chromium Web Browser.desktop":
+      row: 3
+      col: 0
+    "/config":
+      row: 0
+      col: 0
+    "/":
+      row: 1
+      col: 0
+    "/config/Desktop/black.jpg":
+      row: 5
+      col: 0
