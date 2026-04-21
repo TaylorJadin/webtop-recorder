@@ -1,0 +1,29 @@
+services:
+  webtop:
+    build: .
+    container_name: webtop
+    restart: unless-stopped
+    shm_size: "2gb"
+
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      # - TZ=America/New_York
+      - TITLE=Webtop Recorder
+      - WIDTH=1920
+      - HEIGHT=1080
+      - REFRESH=60
+
+    volumes:
+      - ./config:/config
+      # - /etc/localtime:/etc/localtime:ro
+
+    # devices:
+      # - /dev/dri:/dev/dri
+
+    security_opt:
+      - label=disable
