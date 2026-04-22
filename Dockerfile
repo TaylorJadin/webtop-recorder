@@ -9,7 +9,7 @@ RUN dnf install -y \
     pulseaudio-utils \
     xrandr \
     procps-ng \
- && dnf clean all
+    && dnf clean all
 
 COPY startup.sh /usr/local/bin/startup.sh
 RUN chmod +x /usr/local/bin/startup.sh
